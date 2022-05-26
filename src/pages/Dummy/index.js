@@ -21,15 +21,11 @@ export const Dummy = () => {
   return (
     <PageLayout>
       <div>
-        <h1>Dummy</h1>
-        <p>This is a dummy page</p>
-        <a href="asd">asda</a>
-        <button>asd</button>
+        <h2 className={styles.header}>Projects</h2>
         <div className={styles.project}>
           {_.map(project.projects.projects, (project) => {
             return <Card project={project} />;
           })}
-          <input type="text"></input>
         </div>
       </div>
     </PageLayout>

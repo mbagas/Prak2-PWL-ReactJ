@@ -27,13 +27,16 @@ export const Profile = () => {
             className={styles.socialLink}
             onClick={() => console.log("asdasd")}
           >
-            <FontAwesomeIcon icon={faInstagram} size="lg" />
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
-          <a href="asd" className={styles.socialLink}>
-            <FontAwesomeIcon icon={faLinkedin} />
+          <a
+            href="https://www.linkedin.com/in/muksin-bagaskara-650375204/"
+            className={styles.socialLink}
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
-          <a className={styles.socialLink}>
-            <FontAwesomeIcon icon={faGithub} />
+          <a href="https://github.com/mbagas/" className={styles.socialLink}>
+            <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
         </div>
       </div>
@@ -61,7 +64,7 @@ const style = createUseStyles({
   },
   socialLink: {
     color: "white",
-    margin: "0 10px",
+    margin: "5px 20px",
   },
 });
 

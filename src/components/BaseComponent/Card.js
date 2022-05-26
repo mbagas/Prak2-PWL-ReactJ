@@ -25,16 +25,18 @@ export const Card = (props) => {
     console.log(project.project.project.comments);
     const { value: text } = await Swal.fire({
       html:
+        `<h3>${project.project.project.name}</h3>` +
+        `<h4>Comment</h4>` +
         `<ul>` +
         _.map(project.project.project.comments, (comment) => {
           return `<li>${comment.name} : ${comment.comment}</li>`;
         }).join("") +
         `</ul>`,
       input: "textarea",
-      inputLabel: "Message",
-      inputPlaceholder: "Type your message here...",
+
+      inputPlaceholder: "Type your comment here...",
       inputAttributes: {
-        "aria-label": "Type your message here",
+        "aria-label": "Type your comment here",
       },
       showCancelButton: true,
     });
@@ -54,7 +56,7 @@ export const Card = (props) => {
       fetchProject();
       const data = await response.json();
       console.log(data);
-      Swal.fire("Success", "Your message has been sent", "success");
+      Swal.fire("Success", "Your comment has been sent", "success");
     }
   };
 
@@ -64,9 +66,9 @@ export const Card = (props) => {
 
       <div className={styles.container}>
         <h4>
-          <b>{props.project.name}</b>
+          <b className={styles.description}>{props.project.name}</b>
         </h4>
-        <p>Architect & Engineer</p>
+        <p className={styles.description}>{props.project.description}</p>
       </div>
     </div>
   );
@@ -76,14 +78,29 @@ const style = createUseStyles({
   container: {
     padding: "2px 16px",
     backgroundColor: "white",
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
+    flex: 1,
+    position: "relative",
+    top: 0,
+    left: 0,
   },
   card: {
     boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
     transition: "0.3s",
     backgroundColor: "white",
-    flex: "1 0 20%",
+    flex: "1 0 30%",
     margin: "1rem",
     padding: "1rem",
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  description: {
+    textAlign: "center",
   },
 });
 
