@@ -41,18 +41,21 @@ export const Card = (props) => {
       showCancelButton: true,
     });
     if (text) {
-      const response = await fetch(`http://127.0.0.1:8000/api/comments`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-        },
-        body: JSON.stringify({
-          project_id: project.project.project.id,
-          name: "guest",
-          comment: text,
-        }),
-      });
+      const response = await fetch(
+        `https://server-muksinbagaskara.herokuapp.com/api/comments`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+          },
+          body: JSON.stringify({
+            project_id: project.project.project.id,
+            name: "guest",
+            comment: text,
+          }),
+        }
+      );
       fetchProject();
       const data = await response.json();
       console.log(data);
