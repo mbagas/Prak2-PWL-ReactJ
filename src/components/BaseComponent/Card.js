@@ -10,7 +10,7 @@ export const Card = (props) => {
 
   const fetchProject = async () => {
     const response = await fetch(
-      `http://127.0.0.1:8000/api/projects/${props.project.id}`
+      `https://server-muksinbagaskara.herokuapp.com/api/projects/${props.project.id}`
     );
     setProject({
       project: await response.json(),
