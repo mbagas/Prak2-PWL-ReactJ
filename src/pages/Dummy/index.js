@@ -10,7 +10,7 @@ export const Dummy = () => {
   });
   const fetchProjects = async () => {
     const response = await fetch(
-      "https://server-muksinbagaskara.herokuapp.com//api/projects"
+      "https://server-muksinbagaskara.herokuapp.com/api/projects"
     );
     setProject({
       projects: await response.json(),
